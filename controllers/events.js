@@ -14,4 +14,11 @@ router.post('/add', async (req, res) => {
 	res.send();
 });
 
+router.get('/search', async (req, res) => {
+	const filteresEvents = await eventsService.getFilterEvents(req.params.body);
+
+	res.send(filteresEvents);
+});
+
+
 module.exports = router;

@@ -10,3 +10,9 @@ exports.addEvent = async (event) => {
 
 }
 
+exports.filterEvents = async (filterConditions) => {
+
+  await eventsRepository.getFilteredEvents(filterConditions);
+
+}
+

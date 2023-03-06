@@ -24,4 +24,20 @@ exports.postEvent = async (event) => {
         Injuries: event.Injuries,
         coordinates: event.coordinates
     });
-}
+};
+
+exports.getFilteredEvents = async (filterConditions) => {
+    return db
+      .get()
+      .collection("events")
+      .find({
+           $and: [
+           { $cond: [ { $ne: ["$filterConditions.time", null ]},  {$eq: ["$time",filterConditions.time]}]},
+           { $cond: [ { $ne: ["$filterConditions.coordinates", null ]},  {$eq: ["$coordinates",filterConditions.coordinates]}]},
+           { $cond: [ { $ne: ["$filterConditions.eventType", null ]},  {$eq: ["$eventType",filterConditions.eventType]}]},
+           { $cond: [ { $ne: ["$filterConditions.weapon", null ]},  {$eq: ["$weapon",filterConditions.weapon]}]},
+           { $cond: [ { $ne: ["$filterConditions.sector", null ]},  {$eq: ["$sector",filterConditions.sector]}]},        ]
+      }, {projection: {_id: 0 }})
+      .toArray();
+  };
+
