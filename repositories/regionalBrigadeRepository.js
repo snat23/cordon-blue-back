@@ -1,10 +1,10 @@
 const db = require("../db/db");
 const { ObjectId } = require('mongodb');
 
-exports.getAllEventTypes = async () => {
+exports.getAllRegionalBrigades = async () => {
   return db
     .get()
-    .collection("eventType")
+    .collection("regionalBrigade")
     .find({}, { projection: {_id: 0, name: 1 } })
     .toArray();
 };

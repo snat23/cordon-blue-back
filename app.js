@@ -5,8 +5,9 @@ const fileUpload = require("express-fileupload");
 const db = require('./db/db');
 
 var weaponTypesRouter = require('./controllers/weaponType');
-var weaponTypesRouter = require('./controllers/eventsTypes');
-var weaponTypesRouter = require('./controllers/events');
+var eventsTypesRouter = require('./controllers/eventsTypes');
+var eventsRouter = require('./controllers/events');
+var regionalBrigadeRouter = require('./controllers/regionalBrigade');
 
 const app = express();
 
@@ -20,8 +21,9 @@ app.use(express.json());
 app.use(fileUpload());
 
 app.use('/weaponTypes', weaponTypesRouter);
-app.use('/eventTypes', weaponTypesRouter);
-app.use('/events', weaponTypesRouter);
+app.use('/eventTypes', eventsTypesRouter);
+app.use('/events', eventsRouter);
+app.use('/regionalBrigade', regionalBrigadeRouter);
 
 const port = 3000;
 
