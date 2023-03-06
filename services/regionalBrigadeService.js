@@ -1,4 +1,4 @@
-const regionalBrigadeRepository = require("../repositories/regionalBrigadeRepository");
+const regionalBrigadeRepository = require('../repositories/regionalBrigadeRepository');
 
 exports.getRegionalBrigade = () => {
   return regionalBrigadeRepository.getAllRegionalBrigades();
