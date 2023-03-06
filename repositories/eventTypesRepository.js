@@ -5,6 +5,6 @@ exports.getAllEventTypes = async () => {
   return db
     .get()
     .collection("eventType")
-    .find({}, {_id : false, name: true})
+    .find({}, { projection: {_id: 0, name: 1 } })
     .toArray();
 };
