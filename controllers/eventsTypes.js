@@ -8,4 +8,10 @@ router.get('', async (req, res) => {
   res.send(eventTypes);
 });
 
+router.get('/:id', async (req, res) => {
+  const eventType = await eventTypeService.getTypeOfEventById(req.params.id)
+
+  res.send(eventType);
+});
+
 module.exports = router;

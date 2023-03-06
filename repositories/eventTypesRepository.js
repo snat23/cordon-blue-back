@@ -8,3 +8,17 @@ exports.getAllEventTypes = async () => {
     .find({}, { projection: { _id: 0, name: 1 } })
     .toArray();
 };
+
+exports.getEventTypeById = async (id) => {
+  return db
+    .get()
+    .collection('eventType')
+    .findOne(
+      {
+        eventId: {
+          $eq: parseInt(id),
+        },
+      },
+      { projection: { _id: 0, name: 1 } }
+    );
+};

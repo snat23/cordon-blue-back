@@ -7,6 +7,7 @@ const db = require('./db/db');
 var weaponTypesRouter = require('./controllers/weaponType');
 var eventsTypesRouter = require('./controllers/eventsTypes');
 var regionalBrigadeRouter = require('./controllers/regionalBrigade');
+var events = require('./controllers/events');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(fileUpload());
 app.use('/weaponTypes', weaponTypesRouter);
 app.use('/eventTypes', eventsTypesRouter);
 app.use('/regionalBrigade', regionalBrigadeRouter);
+app.use('/events', events);
 
 const port = 3000;
 
