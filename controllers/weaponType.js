@@ -7,3 +7,4 @@ router.get('', async (req, res) => {
 
 	res.send(weapons);
 });
+module.exports = router;
