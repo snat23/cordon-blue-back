@@ -7,3 +7,7 @@ exports.getEventType = () => {
 exports.getTypeOfEventById = (id) => {
   return eventTypeRepository.getEventTypeById(id);
 };
+
+exports.getTypeOfEventByName = (typeName) => {
+  return eventTypeRepository.getEventTypeByName(typeName)
+};
