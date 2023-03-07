@@ -11,7 +11,7 @@ exports.addEvent = async (event) => {
 }
 
 exports.getFilterEvents = async (filterConditions) => {
-
+console.log(filterConditions + "serviceeeeee");
   await eventsRepository.getFilteredEvents(filterConditions);
 
 }

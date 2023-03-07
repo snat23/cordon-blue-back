@@ -14,8 +14,10 @@ router.post('/add', async (req, res) => {
 	res.send();
 });
 
-router.get('/search', async (req, res) => {
-	const filteresEvents = await eventsService.getFilterEvents(req.params.body);
+router.get('/search/:condition', async (req, res) => {
+	console.log(JSON.parse(req.params.condition) + " condition ");
+	console.log(typeof JSON.parse(req.params.condition));
+	const filteresEvents = await eventsService.getFilterEvents(JSON.parse(req.params.condition));
 
 	res.send(filteresEvents);
 });

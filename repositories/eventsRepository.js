@@ -27,6 +27,8 @@ exports.postEvent = async (event) => {
 };
 
 exports.getFilteredEvents = async (filterConditions) => {
+    console.log(typeof filterConditions + " TYPE");
+    console.log(filterConditions.eventType + " HELLO");
     return db
       .get()
       .collection("events")
@@ -36,8 +38,7 @@ exports.getFilteredEvents = async (filterConditions) => {
            { $cond: [ { $ne: ["$filterConditions.coordinates", null ]},  {$eq: ["$coordinates",filterConditions.coordinates]}]},
            { $cond: [ { $ne: ["$filterConditions.eventType", null ]},  {$eq: ["$eventType",filterConditions.eventType]}]},
            { $cond: [ { $ne: ["$filterConditions.weapon", null ]},  {$eq: ["$weapon",filterConditions.weapon]}]},
-           { $cond: [ { $ne: ["$filterConditions.sector", null ]},  {$eq: ["$sector",filterConditions.sector]}]},        ]
-      }, {projection: {_id: 0 }})
+      ]}, {projection: {_id: 0 }})
       .toArray();
   };
 
