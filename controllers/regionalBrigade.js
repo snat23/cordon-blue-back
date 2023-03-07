@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const regionalBrigadeService = require('../services/regionalBrigadeService')
+const regionalBrigadeService = require('../services/regionalBrigadeService');
 
 router.get('', async (req, res) => {
-	const regionalBrigade = await regionalBrigadeService.getRegionalBrigade();
+  const regionalBrigade = await regionalBrigadeService.getRegionalBrigade();
 
-	res.send(regionalBrigade);
+  res.send(regionalBrigade);
 });
 
 module.exports = router;
