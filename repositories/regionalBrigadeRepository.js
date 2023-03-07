@@ -4,7 +4,7 @@ const { ObjectId } = require('mongodb');
 exports.getAllRegionalBrigades = async () => {
   return db
     .get()
-    .collection('regionalBrigade')
+    .collection('sector')
     .find({}, { projection: { _id: 0, name: 1 } })
     .toArray();
 };
