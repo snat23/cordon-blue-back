@@ -8,6 +8,7 @@ var weaponTypesRouter = require('./controllers/weaponType');
 var eventsTypesRouter = require('./controllers/eventsTypes');
 var regionalBrigadeRouter = require('./controllers/regionalBrigade');
 var events = require('./controllers/events');
+var usersRouter = require('./controllers/users');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/weaponTypes', weaponTypesRouter);
 app.use('/eventTypes', eventsTypesRouter);
 app.use('/regionalBrigade', regionalBrigadeRouter);
 app.use('/events', events);
+app.use('/users', usersRouter);
 
 const port = 3000;
 
