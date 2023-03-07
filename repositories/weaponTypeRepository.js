@@ -19,6 +19,6 @@ exports.getWeaponTypeByName = async (typeName) => {
           $eq: typeName,
         },
       },
-      { projection: { _id: 0, eventId: 1 } }
+      { projection: { _id: 0, weaponId: 1 } }
     );
 };
