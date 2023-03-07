@@ -6,7 +6,7 @@ exports.getAllEvents = async () => {
 };
 
 exports.postEvent = async (event) => {
-  await db.get().collection("events").insertOne({
+  await db.get().collection('events').insertOne({
     _id: event._id,
     id: event.id,
     eventType: event.eventType,
