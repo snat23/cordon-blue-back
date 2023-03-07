@@ -7,13 +7,13 @@ let mongodb;
 
 // Connect method to connect to the server
 const connect = (callback) => {
-  console.log('trying connect to: ' + dbName);
+  console.log("trying connect to: " + dbName);
   MongoClient.connect(
     mongodbUrl,
     { useUnifiedTopology: true },
     (err, client) => {
       mongodb = client.db(dbName);
-      console.log('connected to: ' + dbName);
+      console.log("connected to: " + dbName);
       callback();
     }
   );
