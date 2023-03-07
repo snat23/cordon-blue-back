@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb'); 
 
-const dbName = 'medori'
-const mongodbUrl = 'mongodb+srv://Sampan96:Rc5ZhVmSRYUZFs94@cluster0.gjr1yzm.mongodb.net/medori?retryWrites=true&w=majority';  
+const dbName = 'tavas'
+const mongodbUrl = 'mongodb://10.252.30.68:27017/';  
 
 let mongodb;
 
