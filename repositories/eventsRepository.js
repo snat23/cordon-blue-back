@@ -5,15 +5,14 @@ exports.getAllEvents = async () => {
   return db
     .get()
     .collection("events")
-    .find({}, { projection: {_id: 0 } })
+    .find({})
     .toArray();
 };
 
 exports.postEvent = async (event) => {
-
     await db
     .get()
-    .collection('files')
+    .collection('events')
     .insertOne({
         id: event.id,
         eventType: event.eventType,

@@ -5,8 +5,6 @@ exports.getEvents = () => {
 };
 
 exports.addEvent = async (event) => {
-
-    await eventsRepository.postEvent(event);
-
+  await eventsRepository.postEvent(event);
 }
 
