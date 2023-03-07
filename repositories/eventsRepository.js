@@ -2,15 +2,12 @@ const db = require("../db/db");
 const { ObjectId } = require("mongodb");
 
 exports.getAllEvents = async () => {
-  return db
-    .get()
-    .collection("events")
-    .find({}, { projection: { _id: 0 } })
-    .toArray();
+  return db.get().collection("events").find({}).toArray();
 };
 
 exports.postEvent = async (event) => {
   await db.get().collection("events").insertOne({
+    _id: event._id,
     id: event.id,
     eventType: event.eventType,
     time: event.time,
@@ -35,7 +32,5 @@ exports.updateById = async (id) => {
   return db
     .get()
     .collection("events")
-    .findOneAndUpdate({
-      _id: ObjectId(id),
-    });
+    .findOneAndUpdate({ _id: ObjectId(id) }, { $set: { isOpen: false } });
 };

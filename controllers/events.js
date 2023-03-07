@@ -14,13 +14,11 @@ router.patch("/:id", async (req, res) => {
   if (!event) return res.status(404).send("Event not found...");
 
   try {
-    await eventsService.updateEventById(req.params.id, {
-      isOpen: false,
-    });
+    await eventsService.updateEventById(req.params.id);
 
     res.status(200).send(`Event ${req.params.id} closed`);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).send(error.message + "ERROR");
   }
 });
 
