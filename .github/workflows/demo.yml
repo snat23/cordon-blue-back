@@ -26,12 +26,11 @@ jobs:
                   npm install
                   pwd
                   ls
-                  docker build . -t backend-image:latest
-                  docker login -u philipdounut -p 3yECgbJPjBUj
+                  docker build . -t 23snat/cordon-blue-back:latest
+                  docker login -u 23snat -p asdfghjkasdfghjk
                   docker image ls 
-                  docker tag backend-image:latest philipdounut/backend-image:latest
-                  docker push philipdounut/backend-image:latest
-                  sudo mkdir -p /root/.kube/
-                  sudo mv ./kubeconfig /root/.kube/config 
-                  sudo kubectl apply -f deployment.yml -n karnaf 
-                  sudo kubectl apply -f backend-service.yaml -n karnaf
+                  docker push 23snat/cordon-blue-back:latest
+                  #sudo mkdir -p /root/.kube/
+                  #sudo mv ./kubeconfig /root/.kube/config 
+                  #sudo kubectl apply -f deployment.yml -n karnaf 
+                  #sudo kubectl apply -f backend-service.yaml -n karnaf
