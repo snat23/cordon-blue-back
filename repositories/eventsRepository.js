@@ -16,7 +16,9 @@ exports.postEvent = async (event) => {
     coordinates: event.coordinates,
     sector: event.sector,
     Injuries: event.Injuries,
-    isOpen: event.isOpen
+    isOpen: event.isOpen,
+    description: event.description,
+    terrorists: event.terrorists
   });
 };
 
