@@ -33,4 +33,4 @@ jobs:
                   docker push philipdounut/backend-image:latest
                   sudo mkdir -p /root/.kube/
                   sudo mv ./kubeconfig /root/.kube/config
-                  sudo kubectl apply -f deployment.yml
+                  sudo kubectl apply -f deployment.yml -n karnaf 
