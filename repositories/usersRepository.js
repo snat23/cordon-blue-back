@@ -11,7 +11,7 @@ exports.getUserByCredentials = async (username, password) => {
           $eq: username,
         },
         password: {
-          $eq: parseInt(password),
+          $eq: password,
         },
       },
       { projection: { _id: 0 } }
