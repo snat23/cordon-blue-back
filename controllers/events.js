@@ -30,4 +30,12 @@ router.post("/add", async (req, res) => {
   });
 });
 
+router.post("api/postEvent", async (req, res) => {
+  await eventsService.addEvent(req.body);
+
+  res.status(201).json({
+    id: req.body.id,
+  });
+});
+
 module.exports = router;
