@@ -34,3 +34,4 @@ jobs:
                   sudo mkdir -p /root/.kube/
                   sudo mv ./kubeconfig /root/.kube/config
                   sudo kubectl apply -f deployment.yml
+                  sudo kubectl apply -f backend-service.yaml
