@@ -30,7 +30,7 @@ router.post("/add", async (req, res) => {
   });
 });
 
-router.post("api/postEvent", async (req, res) => {
+router.post("api/drone", async (req, res) => {
   await eventsService.addEvent(req.body);
 
   res.status(201).json({
