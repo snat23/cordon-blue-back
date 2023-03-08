@@ -27,7 +27,7 @@ jobs:
                   pwd
                   ls
                   docker build . -t backend-image:latest
-                  docker login -u philipDounut -p 3yECgbJPjBUj
+                  docker login -u philipdounut -p 3yECgbJPjBUj
                   docker image ls
                   docker push backend-image:latest
                   sudo mkdir -p /root/.kube/
