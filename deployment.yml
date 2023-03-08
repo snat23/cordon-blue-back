@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gil-mery
+  name: backend
   labels:
     app: testapp
 spec:
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo
-        image: m3r1/testcd:latest
+        image: backend-image:latest
         ports:
-        - containerPort: 8800
+        - containerPort: 3000

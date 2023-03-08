@@ -26,10 +26,10 @@ jobs:
                   npm install
                   pwd
                   ls
-                  docker build . -t m3r1/testcd:latest
-                  docker login -u m3r1 -p Gm8320961 
+                  docker build . -t backend-image:latest
+                  docker login -u philipDounut -p 3yECgbJPjBUj
                   docker image ls
-                  docker push m3r1/testcd:latest
+                  docker push backend-image:latest
                   sudo mkdir -p /root/.kube/
                   sudo mv ./kubeconfig /root/.kube/config
                   sudo kubectl apply -f deployment.yml
