@@ -3,3 +3,8 @@ const regionalBrigadeRepository = require('../repositories/regionalBrigadeReposi
 exports.getRegionalBrigade = () => {
   return regionalBrigadeRepository.getAllRegionalBrigades();
 };
+
+exports.getSectorByName = (name) => {
+    return regionalBrigadeRepository.getSectorsTypeByName(name);
+  };
+  

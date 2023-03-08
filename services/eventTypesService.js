@@ -11,3 +11,7 @@ exports.getTypeOfEventById = (id) => {
   logger.info("Found eventType name " + eventType.name  + " for id " + id);
   return eventType;
 };
+
+exports.getTypeOfEventByName = (typeName) => {
+  return eventTypeRepository.getEventTypeByName(typeName)
+};
