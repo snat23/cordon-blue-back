@@ -5,7 +5,7 @@ metadata:
   labels:
     app: testapp
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: testapp
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo
-        image: backend-image:latest
+        image: philipdounut/backend-image:latest
         ports:
         - containerPort: 3000

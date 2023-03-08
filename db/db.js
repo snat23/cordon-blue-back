@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 const dbName = 'cordonblue';
 const mongodbUrl =
-'mongodb://admin:tavas@10.252.30.68:27017/ais_mlm?authSource=admin';
+'mongodb://admin:tavas@http://mongo-db-karnaf:27017/ais_mlm?authSource=admin';
 
 let mongodb;
 
