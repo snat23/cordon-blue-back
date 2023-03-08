@@ -1,26 +1,36 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const eventsService = require('../services/eventsService')
+const eventsService = require("../services/eventsService");
 
-router.get('', async (req, res) => {
-	const events = await eventsService.getEvents();
+router.get("", async (req, res) => {
+  const events = await eventsService.getEvents();
 
-	res.send(events);
+  res.send(events);
 });
 
-router.post('/add', async (req, res) => {
-	await eventsService.addEvent(req.body);
-
-	res.send();
+router.patch("/:id", async (req, res) => {
+  const event = await eventsService.findEventById(req.params.id);
+  if (!event) return res.status(404).send("Event not found...");
+  try {
+    await eventsService.updateEventById(req.params.id);
+    res.status(200).send(`Event ${req.params.id} closed`);
+  } catch (error) {
+    res.status(500).send(error.message + "ERROR");
+  }
 });
 
 router.get('/search/:condition', async (req, res) => {
-	console.log(JSON.parse(req.params.condition) + " condition ");
-	console.log(typeof JSON.parse(req.params.condition));
 	const filteresEvents = await eventsService.getFilterEvents(JSON.parse(req.params.condition));
-
 	res.send(filteresEvents);
 });
 
+router.post("/add", async (req, res) => {
+  await eventsService.addEvent(req.body);
+
+  res.status(201).json({
+    id: req.body.id,
+  });
+});
 
 module.exports = router;
+

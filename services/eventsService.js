@@ -5,14 +5,18 @@ exports.getEvents = () => {
 };
 
 exports.addEvent = async (event) => {
+  await eventsRepository.postEvent(event);
+};
 
-    await eventsRepository.postEvent(event);
-
-}
+exports.findEventById = (id) => {
+  return eventsRepository.findById(id);
+};
 
 exports.getFilterEvents = async (filterConditions) => {
-console.log(filterConditions + "serviceeeeee");
   await eventsRepository.getFilteredEvents(filterConditions);
 
 }
 
+exports.updateEventById = (id) => {
+  return eventsRepository.updateById(id);
+};
