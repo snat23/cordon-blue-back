@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 const dbName = 'cordonblue';
 const mongodbUrl =
-'mongodb://mongo:mongo123@192.168.0.114:30340';
+`mongodb://mongo:${process.env["DB_USERNAME"]}@${process.env["HOST_IP"]}:${process.env["DB_PORT"]}/?authSource=admin`;
 
 let mongodb;
 
