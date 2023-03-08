@@ -2,7 +2,7 @@ const db = require("../db/db");
 const { ObjectId } = require("mongodb");
 
 exports.getAllEvents = async () => {
-  return db.get().collection("events").find({}).toArray();
+  return db.get().collection("events").find({}).sort({ _id: -1 }).toArray();
 };
 
 exports.postEvent = async (event) => {

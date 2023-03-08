@@ -1,8 +1,7 @@
 const { MongoClient } = require('mongodb');
 
-const dbName = 'bluecordon';
-const mongodbUrl =
-'mongodb://admin:tavas@10.252.30.6:27017/?authSource=admin';
+const dbName = "bluecordon";
+const mongodbUrl = "mongodb://admin:tavas@10.252.30.6:27017/?authSource=admin";
 
 let mongodb;
 
