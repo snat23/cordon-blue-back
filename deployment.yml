@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo
-        image: backend-image:latest
+        image: philipdounut/backend-image:latest
         ports:
         - containerPort: 3000
