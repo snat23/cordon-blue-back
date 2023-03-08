@@ -30,7 +30,3 @@ jobs:
                   docker login -u 23snat -p asdfghjkasdfghjk
                   docker image ls 
                   docker push 23snat/cordon-blue-back:latest
-                  #sudo mkdir -p /root/.kube/
-                  #sudo mv ./kubeconfig /root/.kube/config 
-                  #sudo kubectl apply -f deployment.yml -n karnaf 
-                  #sudo kubectl apply -f backend-service.yaml -n karnaf
