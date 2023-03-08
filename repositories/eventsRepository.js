@@ -6,16 +6,17 @@ exports.getAllEvents = async () => {
 };
 
 exports.postEvent = async (event) => {
-  await db.get().collection('events').insertOne({
+  await db.get().collection("events").insertOne({
     _id: event._id,
     id: event.id,
-    eventType: event.eventType,
+    alertName: event.alertName,
     time: event.time,
     weapon: event.weapon,
-    sector: event.sector,
-    alertName: event.alertName,
-    Injuries: event.Injuries,
+    eventType: event.eventType,
     coordinates: event.coordinates,
+    sector: event.sector,
+    Injuries: event.Injuries,
+    isOpen: event.isOpen
   });
 };
 
