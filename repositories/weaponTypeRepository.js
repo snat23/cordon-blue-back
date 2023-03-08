@@ -9,6 +9,20 @@ exports.getAllWeaponTypes = async () => {
     .toArray();
 };
 
+exports.getWeaponTypeById = async (id) => {
+  return db
+    .get()
+    .collection("weaponType")
+    .findOne(
+      {
+        weaponId: {
+          $eq: parseInt(id),
+        },
+      },
+      { projection: { _id: 0, weaponName: 1 } }
+    );
+};
+
 exports.getWeaponTypeByName = async (typeName) => {
   return db
     .get()

@@ -8,9 +8,16 @@ router.get('', async (req, res) => {
   res.send(regionalBrigade);
 });
 
+router.get("/id/:id", async (req, res) => {
+  const sector = await regionalBrigadeService.getSectorOfEventById(req.params.id);
+
+  res.send(sector);
+});
+
 router.get("/name/:name", async (req, res) => {
 	const sector = await regionalBrigadeService.getSectorByName(req.params.name);
   
 	res.send(sector);
 });
+
 module.exports = router;
