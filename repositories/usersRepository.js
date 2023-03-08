@@ -1,11 +1,19 @@
-const db = require('../db/db');
-const { ObjectId } = require('mongodb');
+const db = require("../db/db");
+const { ObjectId } = require("mongodb");
 
-exports.getAllUsers = async () => {
+exports.getUserByCredentials = async (username, password) => {
   return db
     .get()
-    .collection('users')
-    .find({}, { projection: { _id: 0} })
-    .toArray();
+    .collection("users")
+    .findOne(
+      {
+        username: {
+          $eq: username,
+        },
+        password: {
+          $eq: password,
+        },
+      },
+      { projection: { _id: 0 } }
+    );
 };
-

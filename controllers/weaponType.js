@@ -8,6 +8,12 @@ router.get('', async (req, res) => {
 	res.send(weapons);
 });
 
+router.get("/id/:id", async (req, res) => {
+  const sector = await weaponTypeService.getWeaponById(req.params.id);
+
+  res.send(sector);
+});
+
 router.get("/name/:name", async (req, res) => {
 	const weapon = await weaponTypeService.getWeaponByName(req.params.name);
   

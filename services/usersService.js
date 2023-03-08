@@ -1,5 +1,5 @@
-const usersRepository = require('../repositories/usersRepository');
+const usersRepository = require("../repositories/usersRepository");
 
-exports.getUsers = () => {
-  return usersRepository.getAllUsers();
+exports.getUserByCredentials = (username, password) => {
+  return usersRepository.getUserByCredentials(username, password);
 };
