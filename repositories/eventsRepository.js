@@ -8,7 +8,6 @@ exports.getAllEvents = async () => {
 exports.postEvent = async (event) => {
   await db.get().collection("events").insertOne({
     _id: event._id,
-    id: event.id,
     alertName: event.alertName,
     time: event.time,
     weapon: event.weapon,
@@ -16,7 +15,9 @@ exports.postEvent = async (event) => {
     coordinates: event.coordinates,
     sector: event.sector,
     Injuries: event.Injuries,
-    isOpen: event.isOpen
+    isOpen: event.isOpen,
+    description: event.description,
+    terrorists: event.terrorists
   });
 };
 
