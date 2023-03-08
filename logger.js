@@ -1,5 +1,9 @@
-const {createLogger} = require('winston')
+const winston = require('winston')
 
-const logger = createLogger();
+const logger = winston.createLogger({
+    level: "debug",
+    format: winston.format.json(),
+    transports: [new winston.transports.Console()],
+});
 
 module.exports = logger;
