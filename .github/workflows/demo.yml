@@ -28,8 +28,8 @@ jobs:
                   ls
                   docker build . -t backend-image:latest
                   docker login -u philipdounut -p 3yECgbJPjBUj
-                  docker image ls
-                  docker push backend-image:latest
+                  docker image ls 
+                  docker push philipdounut/backend-image:latest
                   sudo mkdir -p /root/.kube/
                   sudo mv ./kubeconfig /root/.kube/config
                   sudo kubectl apply -f deployment.yml
